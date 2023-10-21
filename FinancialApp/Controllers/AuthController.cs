@@ -14,7 +14,7 @@ using System.Text;
 
 namespace FinancialApp.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     /// <summary>
     /// This is a sample API controller.
@@ -61,6 +61,8 @@ namespace FinancialApp.Controllers
         /// </response>
 
         /// <response code="400">Email and password are required OR their is mistake in the input </response>
+        /// <response code="409">If Email already exist (conflict)</response>
+        
 
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterDto model)
@@ -219,16 +221,6 @@ namespace FinancialApp.Controllers
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
-
-
-
-
-
-
-
-
-
-
 
 
 

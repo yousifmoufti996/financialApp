@@ -23,6 +23,7 @@
             }
             </response>
             <response code="400">Email and password are required OR their is mistake in the input </response>
+            <response code="409">If Email already exist (conflict)</response>
         </member>
         <member name="M:FinancialApp.Controllers.AuthController.Login(FinancialApp.Models.DomainModels.LoginDto)">
             <remarks>

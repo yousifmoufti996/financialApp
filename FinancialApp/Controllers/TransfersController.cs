@@ -68,6 +68,10 @@ namespace FinancialApp.Controllers
         //    return Ok(noteslist);
         //}
 
+
+
+
+
         /// <summary>
         ///  This endpoint requires authentication.
         /// </summary>

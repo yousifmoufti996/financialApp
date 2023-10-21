@@ -17,7 +17,8 @@ namespace FinancialApp.Utils
                 {
                     Id = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa6"), //Guid.NewGuid(), // Generate a unique ID for the account
                     Balance = 1000.0m, // Set the initial balance
-                    UserId = user1.Id
+                    UserId = user1.Id,
+                    CreatedDate = DateTime.Now
                 };
                 dbContext.Accounts.Add(account1);
             }
@@ -28,7 +29,9 @@ namespace FinancialApp.Utils
                 {
                     Id = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa7"),//Guid.NewGuid(), // Generate a unique ID for the account
                     Balance = 1500.0m, // Set the initial balance
-                    UserId = user2.Id
+                    UserId = user2.Id,
+                    CreatedDate = DateTime.Now
+
                 };
                 dbContext.Accounts.Add(account2);
             }

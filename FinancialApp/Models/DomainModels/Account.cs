@@ -7,6 +7,7 @@ namespace FinancialApp.Models.DomainModels
         public Guid Id { get; set; }
         public decimal Balance { get; set; }
         public string UserId { get; set; }
+        public DateTime CreatedDate { get; set; }
       
     }
 }

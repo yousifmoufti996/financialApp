@@ -5,6 +5,7 @@ C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\bin\Debug\net6.0\FinancialA
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\bin\Debug\net6.0\FinancialApp.runtimeconfig.json
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\bin\Debug\net6.0\FinancialApp.dll
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\bin\Debug\net6.0\FinancialApp.pdb
+C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\bin\Debug\net6.0\FinancialApp.xml
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\bin\Debug\net6.0\Humanizer.dll
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -42,7 +43,7 @@ C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\obj\Debug\net6.0\scopedcss\
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\obj\Debug\net6.0\FinancialApp.csproj.CopyComplete
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\obj\Debug\net6.0\FinancialApp.dll
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\obj\Debug\net6.0\refint\FinancialApp.dll
+C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\obj\Debug\net6.0\FinancialApp.xml
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\obj\Debug\net6.0\FinancialApp.pdb
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\obj\Debug\net6.0\FinancialApp.genruntimeconfig.cache
 C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\obj\Debug\net6.0\ref\FinancialApp.dll
-C:\Users\ASUS\source\repos\FinancialApp\FinancialApp\bin\Debug\net6.0\FinancialApp.xml

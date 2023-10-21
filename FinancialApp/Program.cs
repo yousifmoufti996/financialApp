@@ -6,16 +6,42 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using FinancialApp;
-
-
-
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "FinancialApp ",
+        Description = "An ASP.NET Core Web API for managing financial " +
+        "application various aspects of user accounts and financial transactions, " +
+        "like registration, authentication,fund transfers between user accounts, " +
+        "Retrieval of account balances, Transaction history retrieval, Account statement generation " +
+        "",
+        //TermsOfService = new Uri("https://example.com/terms"),
+        //Contact = new OpenApiContact
+        //{
+        //    Name = "Example Contact",
+        //    Url = new Uri("https://example.com/contact")
+        //},
+        //License = new OpenApiLicense
+        //{
+        //    Name = "Example License",
+        //    Url = new Uri("https://example.com/license")
+        //}
+    });
+
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+
+});
 
 builder.Services.AddDbContext<FinancialDBContext>(options =>
 {
@@ -45,18 +71,6 @@ builder.Services.Configure<IdentityOptions>(options =>
 });
 
 
-//builder.Services.AddAuthorization(options =>
-//{
-//    options.AddPolicy("UserPolicy", policy =>
-//    {
-//        policy.RequireRole("User"); // Users with the "User" role can access this policy.
-//    });
-
-//    options.AddPolicy("AdminPolicy", policy =>
-//    {
-//        policy.RequireRole("Admin"); // Users with the "Admin" role can access this policy.
-//    });
-//});
 
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

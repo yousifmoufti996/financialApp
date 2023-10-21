@@ -32,9 +32,35 @@ namespace FinancialApp.Controllers
             _configuration = configuration;
             this.dbContext = dbContext;
             this.userManager = userManager;
-   
+
         }
 
+
+
+
+
+
+        /// <remarks>
+        ///  A POST methode for creating a new user (registreation proccess) and creates an account for this user.
+        /// </remarks>
+
+
+        /// <response code="200">Returns 
+        ///         {
+        ///         "result": {
+        ///       "succeeded": true,
+        ///   "errors": []
+        ///             },
+        ///       "account": {
+        ///     "id": "c6052046-d614-4edb-8f67-334270cda3ce",
+        /// "balance": 5000,
+        ///             "userId": "fbcedad5-119a-40f8-8d0c-40b05e31b829",
+        ///         "createdDate": "0001-01-01T00:00:00"
+        ///   }
+        /// }
+        /// </response>
+
+        /// <response code="400">Email and password are required OR their is mistake in the input </response>
 
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterDto model)
@@ -63,7 +89,6 @@ namespace FinancialApp.Controllers
              
                 Email = model.Email,
                 Address  = model.Address,
-                Age = model.Age,
 
             };
 
@@ -76,10 +101,7 @@ namespace FinancialApp.Controllers
 
                 if (result.Succeeded)
                 {
-                    //if (!Guid.TryParse(user.Id, out Guid userGuid))
-                    //{
-                    //    return BadRequest("Invalid user ID format.");
-                    //}
+                    
                     // If user creation is successful, create an associated account
                     var account = new Account
                     {
@@ -96,7 +118,7 @@ namespace FinancialApp.Controllers
                 else
                 {
                     // Handle any registration errors
-                    return BadRequest("User registration failed. Please check your input.");
+                    return BadRequest("User registration failed. Please check your input. Email and password are required");
                 }
             }
             catch (Exception ex)
@@ -104,7 +126,7 @@ namespace FinancialApp.Controllers
                 return BadRequest(ex.Message);
                
             }
-            
+
 
 
         }
@@ -125,8 +147,19 @@ namespace FinancialApp.Controllers
 
 
 
-       
-        [HttpPost("login")]
+
+
+        /// <remarks>
+        ///  A POST methode for logging in and returning a token.
+        /// </remarks>
+
+
+        /// <response code="200">Returns 
+        ///  {"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZmJjZWRhZDUtMTE5YS00MGY4LThkMGMtNDBiMDVlMzFiODI5IiwibmJmIjoxNjk3ODUxNTc3LCJleHAiOjE2OTc4NTUxNzcsImlhdCI6MTY5Nzg1MTU3NywiaXNzIjoiaXNzdWVyIiwiYXVkIjoiYXVkaWVuY2UifQ.qdK8rLbDdV8TPkQ_mLiI4rH1BiIfTRETSddztaHV7X4"}
+    /// </response>
+    /// <response code="400"> if not providding both email and password  OR their is mistake in the input </response>
+    /// <response code="401"> if Invalid Email or password   OR their is mistake in the input </response>
+    [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto login)
         {
             if (login == null || string.IsNullOrEmpty(login.Email) || string.IsNullOrEmpty(login.Password))
@@ -140,7 +173,7 @@ namespace FinancialApp.Controllers
 
             if (user == null)
             {
-                return Unauthorized("Invalid Email or passwordddddddddddd.");
+                return Unauthorized("Invalid Email.");
             }
 
             var result = await userManager.CheckPasswordAsync(user, login.Password); // Use userManager
@@ -153,7 +186,7 @@ namespace FinancialApp.Controllers
             }
             else
             {
-                return Unauthorized("Invalidddddddddddd Email or password.");
+                return Unauthorized("Invalid Email or password.");
             }
         }
 

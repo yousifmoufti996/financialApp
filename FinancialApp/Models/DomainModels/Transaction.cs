@@ -4,11 +4,13 @@
     {
         public Guid Id { get; set; }
         public decimal Amount { get; set; }
+        public decimal BalanceBeforeTransaction { get; set; }
         public TransactionType Type { get; set; }
         public DateTime Date { get; set; }
 
         public string SourceAccountId { get; set; }
         public string DestinationAccountId { get; set; }
+
 
         //public Guid Id { get; set; }
         //public decimal Amount { get; set; }

@@ -32,44 +32,6 @@ namespace FinancialApp.Controllers
         }
 
 
-        ///// <summary>
-        ///// This endpoint requires authentication.
-        ///// </summary>
-        ///// <remarks>
-        ///// To access this endpoint, include a valid JWT token in the 'Authorization' header as a bearer token.
-        ///// Example: 'Authorization: Bearer your-token-here'
-        ///// </remarks>
-        //[HttpGet("GetAlltransactions")]
-        //public IActionResult GetAlltransactions()
-        //{
-
-        //    //}
-
-        //    var claimsIdentity = this.User.Identity as ClaimsIdentity;
-
-        //    var userId = claimsIdentity.FindFirst(ClaimTypes.Name)?.Value;
-        //    if (userId == null)
-        //    {
-        //        return Unauthorized("User not authenticated.");
-        //    }
-        //    var trans = _dbContext.Transactions.Where(note => note.Date != null).ToList();
-
-        //    var noteslist = trans.Select(note => new Transaction
-        //    {
-        //        Id = note.Id,
-        //        Amount = note.Amount,
-        //            Type = note.Type,
-        //            Date = note.Date,
-        //            SourceAccountId = note.SourceAccountId,
-        //            DestinationAccountId = note.DestinationAccountId,
-        //    }).ToList();
-
-
-        //    return Ok(noteslist);
-        //}
-
-
-
 
 
         /// <summary>

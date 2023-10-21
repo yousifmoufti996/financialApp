@@ -11,5 +11,8 @@
         public decimal StartingBalance { get; set; }
         public decimal EndingBalance { get; set; }
         public List<Transaction> Transactions { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTimeOffset? DeletedAt { get; set; }
+
     }
 }
